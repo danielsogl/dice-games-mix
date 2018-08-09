@@ -16,6 +16,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".MaexleWelcomeScreen" />
+        <activity android:name=".MaexlePlayerScreen" />
+        <activity android:name=".MaexleGameScreen" />
+        <activity android:name=".MaexleHighscoreScreen" />
+        <activity android:name=".Dice"></activity>
     </application>
 
 </manifest>

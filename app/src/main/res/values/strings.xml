@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">Dice Games Mix</string>
+
+    <!--String-Array for the ListView in the MainMenu -->
+    <string-array name="gameNames">
+        <item>Mäxle</item>
+        <item>Dice</item>
+    </string-array>
+
+    <string-array name="gameDescriptions">
+        <item>A dice game for multiple players (min. 2). Click for the rules.</item>
+        <item>A simple dice. Can manage up to 6 dices at one time.</item>
+    </string-array>
+
 </resources>

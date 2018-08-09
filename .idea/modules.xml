@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/DiceGamesMix.iml" filepath="$PROJECT_DIR$/DiceGamesMix.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dice-games-mix.iml" filepath="$PROJECT_DIR$/dice-games-mix.iml" />
     </modules>
   </component>
 </project>
