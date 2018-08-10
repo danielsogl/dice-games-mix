@@ -14,11 +14,11 @@
         To avoid that situation, the player is allowed to lie.\n
         The following player, getting the result of the first, has now two options:\n they believe,
         that the result is the right one, or they don\'t believe it and think, it\'s LOWER than the
-        true result, and decide to uncover. Now, the player who\'s wrong gets a point.
-        If a \'Mäxle\' was both announced and uncovered, the player gets two points.
+        true result, and decide to uncover. Now, the player who\'s wrong gets a point.\n
+        If a \'Mäxle\' was both announced and uncovered, the player gets two points.\n\n
         In Mäxle, you dice with two dices. To get the result, put the smaller number just behind
         the bigger one (no adding, just putting together: 3 and 5 -> 53).
-        The value of the result is the following, descending: 21 (called \'Mäxle\'), 66, 55,
+        The value of the result is the following, descending:\n21 (called \'Mäxle\'), 66, 55,
         44, 33, 22, 11, 65-61, 54-51,  43-41, 32, 31.
     </string>
     <!--String-Array for the ListView in the MainMenu -->
