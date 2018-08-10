@@ -13,15 +13,16 @@ public class Dice extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dice);
 
-        //it simply roles the dice
+        //it simply throws the dice
         //just a placeholder, needs to be improved
 
         //objects
         final TextView simpleDice_diceResult_TextView = (TextView) findViewById(R.id.simpleDice_diceResult_TextView);
-        Button simpleDice_rollDice_Button = (Button) findViewById(R.id.simpleDice_rollDice_Button);
+        Button dice_throw_btn = (Button) findViewById(R.id.dice_throw_btn);
+        Button dice_back_btn = (Button) findViewById(R.id.dice_back_btn);
 
         //set an OnClickListener, so we can display the result
-        simpleDice_rollDice_Button.setOnClickListener(new View.OnClickListener() {
+        dice_throw_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //initialize this string with a random number
@@ -29,6 +30,14 @@ public class Dice extends AppCompatActivity {
 
                 //display this random number
                 simpleDice_diceResult_TextView.setText(diceValue.toString());
+            }
+        });
+
+        //back button
+        dice_back_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
             }
         });
     }

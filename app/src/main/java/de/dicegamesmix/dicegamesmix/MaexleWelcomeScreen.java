@@ -4,8 +4,14 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Spannable;
+import android.text.method.MovementMethod;
+import android.text.method.ScrollingMovementMethod;
+import android.view.KeyEvent;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 public class MaexleWelcomeScreen extends AppCompatActivity {
@@ -19,8 +25,10 @@ public class MaexleWelcomeScreen extends AppCompatActivity {
         //here is displayed: the rules and a button to start the game and ont to exit
 
         //objects
-        //TextView maexle_welc_header = (TextView) findViewById(R.id.maexle_welc_header);
+        //TextView, scrollable
         TextView maexle_welc_rules = (TextView) findViewById(R.id.maexle_welc_rules);
+        maexle_welc_rules.setMovementMethod(new ScrollingMovementMethod());
+        //Buttons
         Button maexle_welc_back_btn = (Button) findViewById(R.id.maexle_welc_back_btn);
         Button maexle_welc_start_btn = (Button) findViewById(R.id.maexle_welc_start_btn);
 
@@ -46,7 +54,7 @@ public class MaexleWelcomeScreen extends AppCompatActivity {
             }
         });
 
-        //go back - Button#
+        //go back - Button
         maexle_welc_back_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
