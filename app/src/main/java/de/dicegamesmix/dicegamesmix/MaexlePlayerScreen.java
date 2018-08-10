@@ -39,9 +39,19 @@ public class MaexlePlayerScreen extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent maexle_Gamescreen = new Intent(getApplicationContext(), MaexleGameScreen.class);
+                /*maexle_Gamescreen.putExtra("de.dicegamesmix.dicegamesmix", );*/
                 startActivity(maexle_Gamescreen);
             }
         });
+
+        Button maexle_player_back_btn = (Button) findViewById(R.id.maexle_player_back_btn);
+        maexle_player_back_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
+
         final Button maexle_player_btn_add = (Button) findViewById(R.id.maexle_player_btn_add);
         maexle_player_btn_add.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -105,6 +115,8 @@ public class MaexlePlayerScreen extends AppCompatActivity {
                         return true;
                     }
                 });
+
+
 
             }
         });
