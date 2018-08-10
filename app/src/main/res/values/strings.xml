@@ -4,15 +4,15 @@
     <!--Mäxle Welcome Screen rules-->
     <string name="rules_of_maexle">
         Mäxle is a dice game, played with at least 2, but better 5 to 6 people. The aim is to
-        get the least possible amount of points.
-        The first player dices and tells the next player the result. The result he tells
+        get the least possible amount of points.\n\n
+        The first player dices and tells the next player the result. The result they tell
         the next player must not be the true result, it is allowed (and for tactical
-        reasons in some situations recomendet) to lie.
-        The reason why it can be useful to lie is the following:
+        reasons in some situations recomendet) to lie.\n
+        The reason why it can be useful to lie is the following:\n
         Each player has to dice a higher value than the previous player. If they don\'t,
         they\'ll get a point.
-        To avoid that situation, the player is allowed to lie.
-        The following player, getting the result of the first, has now two options: they believe,
+        To avoid that situation, the player is allowed to lie.\n
+        The following player, getting the result of the first, has now two options:\n they believe,
         that the result is the right one, or they don\'t believe it and think, it\'s LOWER than the
         true result, and decide to uncover. Now, the player who\'s wrong gets a point.
         If a \'Mäxle\' was both announced and uncovered, the player gets two points.
