@@ -47,7 +47,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(MaexlePlayerScreen);
+
             }
         });
+        test.setVisibility(View.GONE); //Test Button nicht mehr sichtbar
     }
 }
