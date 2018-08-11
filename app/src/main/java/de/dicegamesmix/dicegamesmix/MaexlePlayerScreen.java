@@ -29,6 +29,12 @@ public class MaexlePlayerScreen extends AppCompatActivity {
         setContentView(R.layout.activity_maexle_player_screen);
         playerList = Paper.book().read("Players", new ArrayList<String>());
 
+        //set the index, answer and result saved on the device to zero, to start the session
+        Paper.book().write("index", 0);
+        Paper.book().write("answer", 0);
+        Paper.book().write("resutl", "");
+
+        //code: has to be commented
         final ArrayAdapter adapter = new ArrayAdapter<String>(this, R.layout.playerscreen_listview_layout, playerList);
         final ListView maexle_player_playerList = (ListView) findViewById(R.id.maexle_player_playerList);
         maexle_player_playerList.setAdapter(adapter);
@@ -53,21 +59,33 @@ public class MaexlePlayerScreen extends AppCompatActivity {
         });
 
         final Button maexle_player_btn_add = (Button) findViewById(R.id.maexle_player_btn_add);
+
+        //OnClickListener for the plus-button
         maexle_player_btn_add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //alert-dialog declared and initialized
                 AlertDialog.Builder playername = new AlertDialog.Builder(MaexlePlayerScreen.this);
                 playername.setMessage("Please enter your name.")
                         .setTitle("add player");
+                //object for EditText
                 final EditText playerInput = new EditText(MaexlePlayerScreen.this);
+                //added the EditText to the AlertDialogue
                 playername.setView(playerInput);
 
+                //aded buttons to the AlertDialogue
                 playername.setPositiveButton("Okay", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         String playerInputValue = playerInput.getText().toString();
+
+                        //saving
                         playerList.add(playerInputValue);
+
+                        //updates the list on screen
                         adapter.notifyDataSetChanged();
+
+                        //saving on device
                         Paper.book().write("Players", playerList);
                     }
                 });
@@ -77,30 +95,26 @@ public class MaexlePlayerScreen extends AppCompatActivity {
                         dialogInterface.dismiss();
                     }
                 });
+                //Dialog-builder is transformed into a "real" dialog
                 AlertDialog dialog = playername.create();
                 dialog.show();
 
-                /*maexle_player_playerList.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
-                    @Override
-                    public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
-                        playerList.remove(i);
-                        adapter.notifyDataSetChanged();
-                        Paper.book().write("Players", playerList);
-                        return true;
-                    }
-                });*/
-
+                //deletion of the player with al long click
                 maexle_player_playerList.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
                     @Override
                     public boolean onItemLongClick(AdapterView<?> adapterView, View view, final int p, long l) {
+                        //declare and initialize Dialog
                         AlertDialog.Builder deletePlayer = new AlertDialog.Builder(MaexlePlayerScreen.this);
                         deletePlayer.setMessage("Are you sure you want to delete this player?")
                                 .setTitle("delete player")
                                 .setPositiveButton("yes", new DialogInterface.OnClickListener() {
                                     @Override
                                     public void onClick(DialogInterface dialogInterface, int i) {
+                                        //selected item in the arrayList
                                         playerList.remove(p);
+                                        //refresh the List on the screen
                                         adapter.notifyDataSetChanged();
+                                        //overwrite List on device to commit changes
                                         Paper.book().write("Players", playerList);
                                     }
                                 })
@@ -111,6 +125,7 @@ public class MaexlePlayerScreen extends AppCompatActivity {
                                     }
                                 });
                         AlertDialog deleteDialog = deletePlayer.create();
+                        //show dialogue
                         deleteDialog.show();
                         return true;
                     }
@@ -121,6 +136,5 @@ public class MaexlePlayerScreen extends AppCompatActivity {
             }
         });
 
-        //here you can add the players
     }
 }
