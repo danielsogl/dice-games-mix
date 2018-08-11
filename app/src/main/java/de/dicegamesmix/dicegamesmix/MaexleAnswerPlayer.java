@@ -23,9 +23,9 @@ public class MaexleAnswerPlayer extends AppCompatActivity {
         //objects for the graphical elements
         Button maexle_ansPl_menu_btn = (Button) findViewById(R.id.maexle_ansPl_menu_btn);
         Button maexle_ansPl_ready_btn = (Button) findViewById(R.id.maexle_ansPl_ready_btn);
-        TextView maexle_ansPl_playerName_tv = (TextView) findViewById(R.id.maexle_answPl_playerName_tv);
-        TextView maexle_ansPl_result_tv = (TextView) findViewById(R.id.maexle_anPl_result_tv);
-        EditText maexle_ansPl_ansInput_et = (EditText) findViewById(R.id.maexle_ansPl_ansInput_et);
+        TextView maexle_ansPl_playerName_tv = (TextView) findViewById(R.id.maexle_ansPl_playerName_tv);
+        TextView maexle_ansPl_result_tv = (TextView) findViewById(R.id.maexle_ansPl_result_tv);
+        final EditText maexle_ansPl_ansInput_et = (EditText) findViewById(R.id.maexle_ansPl_ansInput_et);
 
         //Intent to go to the other sites
         final Intent ansPl_maexle_throwMiddle = new Intent(getApplicationContext(), MaexleThrowMiddle.class);
@@ -37,11 +37,11 @@ public class MaexleAnswerPlayer extends AppCompatActivity {
         List<String> playerPoints = new ArrayList<>();
 
         //variable for answer of the player
-        int answer = 0;
+        //final Integer answer = 0;
         //variable for result of the player
-        int result = 0;
+        Integer result = 0;
         //variable for the index of the player in the array-lists
-        int index = 0;
+        Integer index = 0;
 
         //read and save playerNames and playerPoints in the array-lists
         playerNames = Paper.book().read("Players");
@@ -50,20 +50,16 @@ public class MaexleAnswerPlayer extends AppCompatActivity {
         //read the index of the player
         index = Paper.book().read("index");
         //read the result of the player
-        result = Integer.parseInt(Paper.book().read("result").toString());
+        String zwischenspeicher = Paper.book().read("result");
+        result = Integer.parseInt(zwischenspeicher);
 
         //write playerName in header
-        maexle_ansPl_playerName_tv.setText(playerNames.get(index));
+        String debug_string = playerNames.get(index);
+        maexle_ansPl_playerName_tv.setText(debug_string);
 
         //display result
         maexle_ansPl_result_tv.setText(result + "");
-
-        //read answer input
-        answer = Integer.parseInt(maexle_ansPl_ansInput_et.getText().toString());
-
-        //write the answerInput to the device
-        Paper.book().write("answer", answer);
-
+        
         //increase index by one to get to the next player
         if (index < playerNames.size()) {
             index++;
@@ -86,6 +82,17 @@ public class MaexleAnswerPlayer extends AppCompatActivity {
         maexle_ansPl_ready_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                //variable
+                int answer = 0;
+
+                //read answer input
+                answer = Integer.parseInt(maexle_ansPl_ansInput_et.getText().toString());
+
+                //write the answerInput to the device
+                Paper.book().write("answer", answer);
+
+                //chenge screen
                 startActivity(ansPl_maexle_throwMiddle);
             }
         });
