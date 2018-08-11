@@ -20,7 +20,11 @@
         <activity android:name=".MaexlePlayerScreen" />
         <activity android:name=".MaexleGameScreen" />
         <activity android:name=".MaexleHighscoreScreen" />
-        <activity android:name=".Dice"></activity>
+        <activity android:name=".Dice" />
+        <activity android:name=".MaexleThrowBeginning" />
+        <activity android:name=".MaexleThrowMiddle" />
+        <activity android:name=".MaexleAnswerPlayer" />
+        <activity android:name=".MaexleAnswerUncover"></activity>
     </application>
 
 </manifest>
