@@ -6,4 +6,61 @@
     android:layout_height="match_parent"
     tools:context=".MaexleThrowMiddle">
 
+    <TextView
+        android:id="@+id/middle_result_number"
+        android:layout_width="67dp"
+        android:layout_height="25dp"
+        android:layout_marginBottom="284dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/middle_result"
+        android:layout_width="125dp"
+        android:layout_height="53dp"
+        android:layout_marginEnd="128dp"
+        android:layout_marginTop="132dp"
+        android:text="result of player before"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/middle_player_name"
+        android:layout_width="114dp"
+        android:layout_height="39dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="playerName"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/middle_uncover_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="60dp"
+        android:layout_marginStart="52dp"
+        android:text="uncover"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/middle_throw_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="60dp"
+        android:layout_marginEnd="52dp"
+        android:text="throw"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 </android.support.constraint.ConstraintLayout>
