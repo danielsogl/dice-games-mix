@@ -38,9 +38,9 @@ public class MaexlePlayerScreen extends AppCompatActivity {
         start_game_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent maexle_Gamescreen = new Intent(getApplicationContext(), MaexleGameScreen.class);
+                Intent maexle_beginningscreen = new Intent(getApplicationContext(), MaexleThrowBeginning.class);
                 /*maexle_Gamescreen.putExtra("de.dicegamesmix.dicegamesmix", );*/
-                startActivity(maexle_Gamescreen);
+                startActivity(maexle_beginningscreen);
             }
         });
 
