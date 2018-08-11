@@ -11,6 +11,5 @@ public class MaexleAnswerUncover extends AppCompatActivity {
         setContentView(R.layout.activity_maexle_answer_uncover);
 
         //objects
-        
     }
 }
