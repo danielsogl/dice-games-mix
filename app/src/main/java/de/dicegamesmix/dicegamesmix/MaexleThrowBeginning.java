@@ -28,8 +28,7 @@ public class MaexleThrowBeginning extends AppCompatActivity {
         final Integer throw2 = (int) (Math.random() * 6) + 1;
         int index = 0;
 
-        final Intent maexle_answerPlayer = new Intent(getApplicationContext(), MaexleAnswerPlayer
-                .class);
+        final Intent maexle_answerPlayer = new Intent(getApplicationContext(), MaexleAnswerPlayer.class);
         final Intent back_to_menu = new Intent(getApplicationContext(),MainActivity.class);
 
         //read index
@@ -57,6 +56,7 @@ public class MaexleThrowBeginning extends AppCompatActivity {
                     beginning_result_number.setText(throw2.toString() + throw1.toString());
                     Paper.book().write("result", resultN);
                 }
+                startActivity(maexle_answerPlayer);
             }
         });
 
